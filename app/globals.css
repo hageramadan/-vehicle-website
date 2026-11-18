@@ -11,6 +11,8 @@
 }
 html {
   scroll-padding-top: 112px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 .container {
   padding-inline: 16px;
@@ -222,7 +224,21 @@ dialog[open]::backdrop {
   input:not([type="checkbox"]):not([type="radio"]),
   textarea,
   select {
+    font-size: 14px;
+  }
+  main h1 {
+    font-size: 22px;
+  }
+  main h2,
+  main h3,
+  main .text-lg {
     font-size: 16px;
+  }
+  main .text-base {
+    font-size: 14px;
+  }
+  main .text-sm {
+    font-size: 13px;
   }
   .btn,
   .primary-button {

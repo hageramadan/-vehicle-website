@@ -6,7 +6,7 @@ import { TripDetails } from "./booking/trip-details";
 import { BookingReview } from "./booking/booking-review";
 import { BookingConfirmation } from "./booking/booking-confirmation";
 import { BookingNavigation } from "./booking/booking-navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LocationPicker } from "./booking/location-picker";
 import { useBooking } from "./booking/use-booking";
 
@@ -17,6 +17,9 @@ export function Booking() {
   const [locationTarget, setLocationTarget] = useState<
     "pickup" | "destination" | null
   >(null);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [booking.step, locationTarget]);
   if (locationTarget) {
     return (
       <main className="container mx-auto min-h-[650px] px-4 py-10 md:px-0">
@@ -50,7 +53,7 @@ export function Booking() {
   }
 
   return (
-    <main className="container mx-auto min-h-[calc(100svh-var(--site-header-height))] pb-8 pt-7 sm:pt-[60px]">
+    <main className="container mx-auto min-h-[calc(100svh-var(--site-header-height))] pb-8 pt-4 sm:pt-[60px]">
       <BookingHeader step={booking.step} />
       {booking.step === 0 && (
         <VehicleSelection

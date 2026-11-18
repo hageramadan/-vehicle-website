@@ -23,7 +23,7 @@ export function LocationField({
 }: LocationFieldProps) {
   return (
     <section className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-6 lg:p-[30px]">
-      <div className="mb-7 flex items-center gap-4">
+      <div className="mb-4 flex items-center gap-4 sm:mb-7">
         <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#74172e] text-sm">
           {number}
         </span>

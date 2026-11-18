@@ -33,7 +33,7 @@ export function BookingHeader({ step }: { step: number }) {
     <>
       <ol
         aria-label="خطوات الحجز"
-        className="mx-auto mb-8 flex w-full max-w-[1056px] items-start sm:mb-16 lg:mb-24"
+        className={`mx-auto flex w-full max-w-[1056px] items-start ${step === 1 ? "mb-4 sm:mb-10 lg:mb-14" : "mb-8 sm:mb-16 lg:mb-24"}`}
       >
         {steps.map(({ label }, index) => {
           const completed = index < step;
@@ -69,14 +69,20 @@ export function BookingHeader({ step }: { step: number }) {
         })}
       </ol>
       {step !== 3 && (
-        <div className="mb-7 text-center sm:mb-14">
+        <div
+          className={
+            step === 1
+              ? "mb-5 text-center sm:mb-8"
+              : "mb-7 text-center sm:mb-14"
+          }
+        >
           <p className="text-base font-bold leading-8 text-[#c4a34f] sm:text-[22px]">
             {current.eyebrow}
           </p>
-          <h1 className="mt-2 text-2xl font-extrabold leading-[1.6] text-white sm:mt-3 sm:text-[42px] lg:text-[52px]">
+          <h1 className="mt-1 text-2xl font-extrabold leading-[1.6] text-white sm:mt-3 sm:text-[42px] lg:text-[52px]">
             {current.title}
           </h1>
-          <p className="mx-auto mt-2 max-w-2xl text-sm font-normal leading-7 text-[#a0a4bd] sm:mt-4 sm:text-lg lg:text-[22px]">
+          <p className="mx-auto mt-2 max-w-2xl text-sm font-normal leading-6 text-[#a0a4bd] sm:mt-4 sm:text-lg sm:leading-7 lg:text-[22px]">
             {current.description}
           </p>
         </div>

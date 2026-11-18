@@ -89,7 +89,7 @@ export function SignupForm({
         <button
           type="button"
           onClick={onBack}
-          className="mb-6 flex items-center gap-2 text-sm text-[#969bb9]"
+          className="mb-4 flex min-h-11 items-center gap-2 text-sm text-[#969bb9] sm:mb-6"
         >
           <FiChevronRight size={22} />
           العودة
@@ -98,16 +98,16 @@ export function SignupForm({
         <h1 className="mt-3 text-[30px] font-extrabold leading-[1.6] text-white sm:text-[40px]">
           {company ? "بيانات الشركة" : "بيانات الحساب الفردي"}
         </h1>
-        <p className="mt-2 text-base leading-8 text-[#969bb9]">
+        <p className="mt-2 text-base leading-6 text-[#969bb9] sm:leading-8">
           جميع الحقول المعلمة بنجمة مطلوبة
         </p>
       </header>
       <form
         noValidate
         onSubmit={submit}
-        className="mt-7 rounded-[22px] border border-white/10 bg-white/5 p-4 sm:mt-12 sm:p-10"
+        className="mt-5 rounded-[22px] border border-white/10 bg-white/5 p-4 sm:mt-12 sm:p-10"
       >
-        <div className="grid grid-cols-1 items-start gap-x-6 gap-y-7 md:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-x-6 gap-y-5 sm:gap-y-7 md:grid-cols-2">
           {company ? (
             <>
               <AuthTextField
