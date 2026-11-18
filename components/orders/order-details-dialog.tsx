@@ -30,9 +30,12 @@ export function OrderDetailsDialog({
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
-      className="fixed inset-0 m-auto max-h-[85vh] w-[calc(100%-32px)] max-w-xl overflow-y-auto rounded-2xl border border-white/10 bg-[#1b2243] p-0 text-[#dfe0ec] shadow-2xl backdrop:bg-black/70"
+      className="fixed inset-0 m-auto max-h-[calc(100dvh-32px)] w-[calc(100%_-_32px)] max-w-xl overflow-y-auto rounded-2xl border border-white/10 bg-[#1b2243] p-0 text-[#dfe0ec] shadow-2xl backdrop:bg-black/70"
     >
-      <section className="p-7" onClick={(event) => event.stopPropagation()}>
+      <section
+        className="p-4 sm:p-7"
+        onClick={(event) => event.stopPropagation()}
+      >
         <div className="flex items-center justify-between gap-4">
           <h2 id="order-details-title" className="font-bold">
             تفاصيل الطلب{" "}
@@ -64,7 +67,7 @@ export function OrderDetailsDialog({
           ].map(([label, value]) => (
             <div className="flex justify-between gap-5" key={label}>
               <dt className="shrink-0 text-[#969bb9]">{label}</dt>
-              <dd className="break-words text-left">{value}</dd>
+              <dd className="min-w-0 break-words text-left">{value}</dd>
             </div>
           ))}
         </dl>

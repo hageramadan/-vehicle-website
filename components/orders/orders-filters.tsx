@@ -16,7 +16,7 @@ export function OrdersFilters({
     <div
       role="group"
       aria-label="تصفية الطلبات"
-      className="mb-8 mt-12 flex flex-wrap gap-3"
+      className="mb-6 mt-7 grid grid-cols-4 gap-2 sm:mb-8 sm:mt-12 sm:flex sm:gap-3"
     >
       {filters.map((filter) => (
         <button
@@ -24,7 +24,7 @@ export function OrdersFilters({
           type="button"
           aria-pressed={filter.id === value}
           onClick={() => onChange(filter.id)}
-          className={`min-w-[74px] rounded-full border px-5 py-2.5 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4a34f] ${value === filter.id ? "border-[#8b2538] bg-[#67152b] text-[#f0d9df]" : "border-white/5 bg-white/5 text-[#969bb9] hover:bg-white/10"}`}
+          className={`min-h-11 min-w-0 rounded-full border px-2 py-2.5 sm:min-w-[74px] sm:px-5 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4a34f] ${value === filter.id ? "border-[#8b2538] bg-[#67152b] text-[#f0d9df]" : "border-white/5 bg-white/5 text-[#969bb9] hover:bg-white/10"}`}
         >
           {filter.label}
         </button>

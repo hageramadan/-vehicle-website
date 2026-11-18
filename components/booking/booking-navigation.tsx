@@ -19,11 +19,11 @@ export function BookingNavigation({
 }: BookingNavigationProps) {
   if (step >= nextLabels.length) return null;
   return (
-    <div className="mt-9 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between sm:gap-4">
+    <div className="mt-6 sm:mt-9 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between sm:gap-4">
       {step > 0 ? (
         <button
           type="button"
-          className="flex items-center gap-2 text-sm text-slate-400"
+          className="flex min-h-11 items-center justify-center gap-2 text-sm text-slate-400 sm:justify-start"
           onClick={onPrevious}
         >
           <FiArrowRight />

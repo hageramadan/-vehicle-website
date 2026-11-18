@@ -12,7 +12,7 @@ export function OrdersHeader() {
       </div>
       <Link
         href="/booking"
-        className="primary-button primary-button--small inline-flex min-h-[60px] items-center justify-center rounded-full bg-gradient-to-l from-[#641027] to-[#881d35] px-7 text-sm font-bold text-white shadow-[0_18px_36px_-6px_#8c1a344d] sm:px-9"
+        className="primary-button primary-button--small inline-flex w-full sm:w-auto min-h-[60px] items-center justify-center rounded-full bg-gradient-to-l from-[#641027] to-[#881d35] px-7 text-sm font-bold text-white shadow-[0_18px_36px_-6px_#8c1a344d] sm:px-9"
       >
         طلب سطحة جديد
       </Link>

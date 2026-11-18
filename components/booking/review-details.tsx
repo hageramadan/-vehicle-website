@@ -19,7 +19,7 @@ export function ReviewDetails({
     return () => next.forEach((url) => URL.revokeObjectURL(url));
   }, [photos]);
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/5 p-6 lg:p-7">
+    <section className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-6 lg:p-7">
       <h2 className="text-lg font-semibold text-[#dfe0ec]">تفاصيل إضافية</h2>
       <p className="mt-4 break-words text-sm leading-7 text-[#a0a5c0]">
         {notes || "لم تتم إضافة تفاصيل إضافية"}

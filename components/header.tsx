@@ -19,7 +19,7 @@ export function Logo() {
   return (
     <Link
       href="/"
-      className="flex shrink-0 items-center gap-3"
+      className="flex min-w-0 items-center gap-2 sm:gap-3"
       aria-label="العربة المتنقله - الرئيسية"
     >
       <Image
@@ -28,13 +28,13 @@ export function Logo() {
         width={320}
         height={320}
         loading="eager"
-        className="size-12 shrink-0 rounded-xl object-contain lg:size-14"
+        className="size-10 shrink-0 rounded-xl object-contain sm:size-12 lg:size-14"
       />
       <span className="text-right">
-        <b className="block text-sm font-extrabold leading-7 lg:text-lg">
+        <b className="block text-xs font-extrabold leading-6 sm:text-sm lg:text-lg">
           العربة المتنقله
         </b>
-        <span className="block text-[10px] leading-5 text-[#989bad] lg:text-xs">
+        <span className="block text-[9px] leading-5 text-[#989bad] sm:text-[10px] lg:text-xs">
           للخدمات اللوجستية
         </span>
       </span>
@@ -49,7 +49,7 @@ export function Header() {
   return (
     <>
       <div className="bg-[#090b1e] text-xs font-normal leading-none text-[#bfc0cd]">
-        <div className="container mx-auto flex h-[51px] items-center justify-between gap-2 px-4 text-[9px] min-[400px]:text-[11px] sm:text-[18px] lg:px-0">
+        <div className="container mx-auto flex h-9 items-center justify-between gap-2 text-[10px] min-[400px]:text-[11px] sm:h-[51px] sm:text-sm lg:text-[18px]">
           <span>خدمة موثوقة على مدار الساعة</span>
           <a
             href="tel:920016173"
@@ -62,11 +62,11 @@ export function Header() {
         </div>
       </div>
       <header className="sticky top-0 z-40 bg-[#1b1f3a]">
-        <div className="container mx-auto flex min-h-24 items-center justify-between gap-3 px-4 lg:px-0 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-8">
+        <div className="container mx-auto flex min-h-[72px] items-center justify-between gap-2 sm:min-h-24 xl:grid xl:grid-cols-[1fr_auto_1fr] xl:gap-8">
           <Logo />
           <nav
             aria-label="التنقل الرئيسي"
-            className="hidden items-center justify-center gap-6 text-[18.29px] leading-[1.62] font-semibold text-[#cdced9] lg:flex xl:gap-8"
+            className="hidden items-center justify-center gap-6 text-[18.29px] leading-[1.62] font-semibold text-[#cdced9] xl:flex xl:gap-8"
           >
             {navigation.map(({ href, label }) => (
               <Link
@@ -79,7 +79,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <div className="flex items-center gap-3 justify-self-end">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-3 justify-self-end">
             <Link
               href="/booking"
               className="primary-button primary-button--small hidden min-h-12 items-center justify-center rounded-full bg-gradient-to-l from-[#651026] to-[#861d36] px-6 text-sm font-bold text-white shadow-[0_18px_36px_-6px_#8c1a344d] sm:inline-flex"
@@ -98,7 +98,7 @@ export function Header() {
               aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
               aria-expanded={open}
               aria-controls="mobile-navigation"
-              className="flex size-10 items-center justify-center text-2xl lg:hidden"
+              className="flex size-11 items-center justify-center rounded-full text-2xl xl:hidden"
               onClick={() => setOpen(!open)}
             >
               {open ? <FiX /> : <FiMenu />}
@@ -109,15 +109,22 @@ export function Header() {
           <nav
             id="mobile-navigation"
             aria-label="قائمة الهاتف"
-            className="container mx-auto flex flex-col gap-5 px-4 lg:px-0 border-t border-white/10 py-5 text-sm font-semibold lg:hidden"
+            className="absolute inset-x-0 top-full max-h-[calc(100dvh-108px)] overflow-y-auto border-t border-white/10 bg-[#1b1f3a] px-4 py-3 text-sm font-semibold shadow-xl sm:max-h-[calc(100dvh-147px)] xl:hidden"
             onClick={() => setOpen(false)}
           >
             {navigation.map(({ href, label }) => (
-              <Link key={href} href={href}>
+              <Link
+                key={href}
+                href={href}
+                className="flex min-h-12 items-center rounded-xl px-3 hover:bg-white/5"
+              >
                 {label}
               </Link>
             ))}
-            <Link href="/booking" className="text-rose-300">
+            <Link
+              href="/booking"
+              className="btn primary-button--small mt-2 w-full"
+            >
               اطلب سطحة الآن
             </Link>
           </nav>

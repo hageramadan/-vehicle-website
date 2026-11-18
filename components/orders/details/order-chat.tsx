@@ -89,12 +89,12 @@ export function OrderChat({ id }: { id: string }) {
     }
   }
   return (
-    <main className="container mx-auto flex min-h-[calc(100svh-147px)] flex-col px-4 pb-8 pt-10 sm:pb-20 sm:pt-16 lg:px-0">
-      <header className="mb-8 flex items-center gap-3">
+    <main className="container mx-auto flex h-[calc(100dvh-var(--site-header-height))] min-h-0 flex-col pb-[max(16px,env(safe-area-inset-bottom))] pt-5 sm:h-auto sm:min-h-[calc(100svh-var(--site-header-height))] sm:pb-20 sm:pt-16">
+      <header className="mb-5 flex shrink-0 items-center sm:mb-8 gap-3">
         <Link
           href={`/orders/${encodeURIComponent(id)}`}
           aria-label="العودة إلى تفاصيل الطلب"
-          className="rounded-full py-2 text-[#a0a5bd]"
+          className="flex size-11 shrink-0 items-center justify-center rounded-full text-[#a0a5bd]"
         >
           <FiChevronRight size={24} />
         </Link>
@@ -116,7 +116,7 @@ export function OrderChat({ id }: { id: string }) {
             role="log"
             aria-label="رسائل الطلب"
             aria-live="polite"
-            className="flex min-h-[350px] flex-1 flex-col gap-6 pb-8"
+            className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain pb-4 sm:min-h-[350px] sm:gap-6 sm:overflow-visible sm:pb-8"
           >
             {loaded && !messages.length && (
               <p className="my-auto text-center text-sm text-[#969bb9]">
@@ -135,14 +135,14 @@ export function OrderChat({ id }: { id: string }) {
               return (
                 <div key={message.id}>
                   {day !== previous && (
-                    <p className="mb-14 text-center text-sm font-semibold text-[#969bb9]">
+                    <p className="mb-7 text-center sm:mb-14 text-sm font-semibold text-[#969bb9]">
                       {message.id.startsWith("demo-") ? "اليوم" : day}
                     </p>
                   )}
                   <div
                     className={`w-[80%] rounded-xl px-4 py-3 text-sm sm:w-[38%] ${message.sender === "provider" ? "ml-auto border border-[#e2e3eb] bg-white text-[#454c6b]" : "mr-auto bg-[#3b4265] text-[#dfe0ec]"}`}
                   >
-                    <p className="whitespace-pre-wrap break-words leading-7">
+                    <p className="whitespace-pre-wrap [overflow-wrap:anywhere] leading-7">
                       {message.text}
                     </p>
                     <time
@@ -179,7 +179,7 @@ export function OrderChat({ id }: { id: string }) {
           ) : (
             <form
               onSubmit={send}
-              className="mx-0 mt-6 flex items-center gap-3 sm:mx-5"
+              className="mx-0 mt-3 flex shrink-0 items-center gap-2 sm:mx-5 sm:mt-6 sm:gap-3"
             >
               <input
                 value={text}

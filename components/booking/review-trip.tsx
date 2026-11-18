@@ -32,7 +32,7 @@ export function ReviewTrip({
 }: ReviewTripProps) {
   const [error, setError] = useState("");
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/5 p-6 lg:p-7">
+    <section className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-6 lg:p-7">
       <div className="mb-5 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-[#dfe0ec]">{title}</h2>
         {onEdit && (
@@ -60,7 +60,7 @@ export function ReviewTrip({
           {error}
         </p>
       )}
-      <dl className="mt-5 grid grid-cols-2 gap-5 text-sm">
+      <dl className="mt-5 grid gap-4 min-[400px]:grid-cols-2 sm:gap-5 text-sm">
         <div className="min-w-0">
           <dt className="mb-2 flex items-center gap-2 text-xs text-[#969bb9]">
             <span className="size-2 rounded-full bg-[#25bf89]" />

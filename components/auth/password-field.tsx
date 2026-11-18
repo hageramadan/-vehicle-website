@@ -21,7 +21,7 @@ export function PasswordField({
   const [visible, setVisible] = useState(false);
   const id = useId();
   return (
-    <div>
+    <div className="min-w-0">
       <label
         htmlFor={id}
         className="mb-2 block text-sm font-bold text-[#c8ccdc]"

@@ -19,7 +19,7 @@ function PhotoPreview({ url, onClose }: { url: string; onClose: () => void }) {
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose();
       }}
-      className="fixed inset-0 m-auto max-h-[90vh] w-[calc(100%-32px)] max-w-4xl rounded-2xl border border-white/10 bg-primary p-4 text-white backdrop:bg-black/80"
+      className="fixed inset-0 m-auto max-h-[calc(100dvh-32px)] w-[calc(100%_-_32px)] overflow-y-auto max-w-4xl rounded-2xl border border-white/10 bg-primary p-4 text-white backdrop:bg-black/80"
     >
       <button
         type="button"

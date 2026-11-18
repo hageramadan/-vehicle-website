@@ -36,7 +36,7 @@ export function VehicleCards({
 }) {
   return (
     <div
-      className="motion-stagger grid w-full items-stretch gap-6 md:grid-cols-3 lg:gap-[31.92px]"
+      className="motion-stagger grid w-full items-stretch gap-4 sm:gap-6 md:grid-cols-3 lg:gap-[31.92px]"
       role={onSelect ? "group" : undefined}
       aria-label="نوع السطحة"
     >
@@ -45,9 +45,9 @@ export function VehicleCards({
         return (
           <article
             key={vehicle.id}
-            className={`motion-card relative flex h-full min-w-0 w-full flex-col overflow-hidden rounded-[21.62px] border-[2.66px] bg-white/5 backdrop-blur-[53.21px] transition-[border-color,box-shadow] md:h-[502.37px] ${isSelected ? "border-[#8b2538] shadow-[0_18px_38px_-15px_#801b3a66]" : "border-[#ffffff14]"}`}
+            className={`motion-card relative flex h-full min-w-0 w-full flex-col overflow-hidden rounded-[21.62px] border-2 bg-white/5 backdrop-blur-[53.21px] transition-[border-color,box-shadow] lg:h-[502.37px] ${isSelected ? "border-[#8b2538] shadow-[0_18px_38px_-15px_#801b3a66]" : "border-[#ffffff14]"}`}
           >
-            <div className="relative aspect-[403.52/318] shrink-0 overflow-hidden md:aspect-auto md:h-[318px]">
+            <div className="relative aspect-[16/9] shrink-0 overflow-hidden lg:aspect-auto lg:h-[318px]">
               <img
                 src={vehicle.image}
                 alt={vehicle.name}
@@ -64,16 +64,16 @@ export function VehicleCards({
                 </span>
               )}
             </div>
-            <div className="flex flex-1 flex-col items-start px-6 pb-6 pt-[18px] text-right">
-              <h3 className="text-xl font-semibold leading-9 text-[#dfe0ec] lg:text-2xl">
+            <div className="flex flex-1 flex-col items-start p-4 text-right sm:px-6 sm:pb-6 sm:pt-[18px] md:px-4 lg:px-6">
+              <h3 className="text-lg font-semibold leading-9 text-[#dfe0ec] sm:text-xl md:text-lg lg:text-2xl">
                 {vehicle.name}
               </h3>
-              <p className="mt-0.5 text-sm font-semibold leading-7 text-[#9398b6] lg:text-base">
+              <p className="mt-0.5 text-sm font-semibold leading-7 text-[#9398b6] md:text-xs lg:text-base">
                 {vehicle.description}
               </p>
               <span
                 aria-hidden="true"
-                className="mt-5 flex items-center gap-2 text-sm font-bold leading-6 text-[#bc9b45] md:mt-auto"
+                className="mt-3 flex items-center gap-2 text-sm font-bold leading-6 text-[#bc9b45] lg:mt-auto"
               >
                 اختيار السطحة <FiChevronLeft size={18} />
               </span>

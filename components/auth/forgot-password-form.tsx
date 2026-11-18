@@ -33,7 +33,7 @@ export function ForgotPasswordForm() {
   if (step === 2) return <NewPasswordForm onSaved={() => setStep(3)} />;
   if (step === 3) return <PasswordUpdated />;
   return (
-    <section className="min-w-0 px-6 pb-14 pt-12 sm:px-12 md:pb-24 md:pt-[72px] lg:px-16">
+    <section className="min-w-0 px-4 pb-8 pt-8 sm:px-12 sm:pb-14 sm:pt-12 md:pb-24 md:pt-[72px] lg:px-16">
       <h1 className="text-[30px] font-extrabold leading-[1.6] text-white lg:text-[40px]">
         نسيت كلمة المرور
       </h1>

@@ -43,7 +43,7 @@ export function PhoneInput({
     <>
       <div
         dir="ltr"
-        className={`mt-2 flex min-h-[58px] w-full items-center gap-3 rounded-xl border px-4 ${error ? "border-[#e06779] bg-[#e06779]/5 focus-within:border-[#e06779]" : "border-white/15 bg-white/5 focus-within:border-[#c4a34f]"} ${className}`}
+        className={`mt-2 flex min-h-[58px] w-full items-center gap-2 rounded-xl border px-3 sm:gap-3 sm:px-4 ${error ? "border-[#e06779] bg-[#e06779]/5 focus-within:border-[#e06779]" : "border-white/15 bg-white/5 focus-within:border-[#c4a34f]"} ${className}`}
       >
         <CountrySelect
           value={country}

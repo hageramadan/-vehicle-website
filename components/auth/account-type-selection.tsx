@@ -8,7 +8,7 @@ export function AccountTypeSelection({
   onSelect: (kind: AccountKind) => void;
 }) {
   return (
-    <section className="flex min-w-0 flex-col justify-center px-6 py-14 sm:px-12 md:py-24 lg:px-16">
+    <section className="flex min-w-0 flex-col justify-center px-4 py-8 sm:px-12 sm:py-14 md:py-24 lg:px-16">
       <h1 className="text-[30px] font-extrabold leading-[1.6] text-white lg:text-[40px]">
         إنشاء حساب جديد
       </h1>
@@ -36,13 +36,13 @@ export function AccountTypeSelection({
             key={kind}
             type="button"
             onClick={() => onSelect(kind)}
-            className="flex min-h-[130px] w-full items-center gap-4 rounded-2xl border-[1.5px] border-white/10 bg-white/5 p-6 text-right transition-colors duration-200 hover:border-[#b32b46] hover:bg-[#6b1f2e]/30 hover:brightness-100 focus-visible:border-[#b32b46] focus-visible:bg-[#6b1f2e]/30 focus-visible:outline-none"
+            className="flex min-h-[112px] w-full items-center gap-3 sm:min-h-[130px] sm:gap-4 rounded-2xl border-[1.5px] border-white/10 bg-white/5 p-3 text-right sm:p-6 transition-colors duration-200 hover:border-[#b32b46] hover:bg-[#6b1f2e]/30 hover:brightness-100 focus-visible:border-[#b32b46] focus-visible:bg-[#6b1f2e]/30 focus-visible:outline-none"
           >
-            <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-[#c4a34f]/10 text-[#c4a34f]">
+            <span className="flex size-11 shrink-0 sm:size-16 items-center justify-center rounded-xl bg-[#c4a34f]/10 text-[#c4a34f]">
               <Icon size={31} />
             </span>
             <span className="min-w-0 flex-1">
-              <span className="block text-lg font-bold text-[#dfe0ec]">
+              <span className="block text-base font-bold sm:text-lg text-[#dfe0ec]">
                 {title}
               </span>
               <span className="mt-1 block text-sm leading-6 text-[#969bb9]">

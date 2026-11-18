@@ -50,7 +50,7 @@ export function Booking() {
   }
 
   return (
-    <main className="container mx-auto min-h-[650px] px-4 pb-6 pt-[60px] md:px-0">
+    <main className="container mx-auto min-h-[calc(100svh-var(--site-header-height))] pb-8 pt-7 sm:pt-[60px]">
       <BookingHeader step={booking.step} />
       {booking.step === 0 && (
         <VehicleSelection

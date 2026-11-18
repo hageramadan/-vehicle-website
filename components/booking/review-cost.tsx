@@ -14,7 +14,7 @@ export function ReviewCost({
   submitting,
 }: ReviewCostProps) {
   return (
-    <aside className="rounded-2xl border border-white/10 bg-white/5 p-7 lg:p-9">
+    <aside className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-7 lg:p-9">
       <div className="border-b border-white/10 pb-7 text-center">
         <h2 className="text-sm text-[#969bb9]">التكلفة التقديرية</h2>
         <p className="mt-4 flex items-baseline justify-center gap-3">

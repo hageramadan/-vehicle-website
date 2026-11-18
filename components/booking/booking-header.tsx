@@ -33,7 +33,7 @@ export function BookingHeader({ step }: { step: number }) {
     <>
       <ol
         aria-label="خطوات الحجز"
-        className="mx-auto mb-16 flex w-full max-w-[1056px] items-start sm:mb-24"
+        className="mx-auto mb-8 flex w-full max-w-[1056px] items-start sm:mb-16 lg:mb-24"
       >
         {steps.map(({ label }, index) => {
           const completed = index < step;
@@ -47,7 +47,7 @@ export function BookingHeader({ step }: { step: number }) {
               {index < steps.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className={`absolute right-[calc(50%+22px)] top-[15px] h-0.5 w-[calc(100%-44px)] sm:right-[calc(50%+61px)] sm:top-5 sm:w-[calc(100%-122px)] ${completed ? "bg-[#891b32]" : "bg-[#c5c7d7]"}`}
+                  className={`absolute right-[calc(50%+22px)] top-[15px] h-0.5 w-[calc(100%-44px)] lg:top-[17px] ${completed ? "bg-[#891b32]" : "bg-[#c5c7d7]"}`}
                 />
               )}
               <span
@@ -69,14 +69,14 @@ export function BookingHeader({ step }: { step: number }) {
         })}
       </ol>
       {step !== 3 && (
-        <div className="mb-12 text-center sm:mb-14">
+        <div className="mb-7 text-center sm:mb-14">
           <p className="text-base font-bold leading-8 text-[#c4a34f] sm:text-[22px]">
             {current.eyebrow}
           </p>
-          <h1 className="mt-3 text-[30px] font-extrabold leading-[1.6] text-white sm:text-[42px] lg:text-[52px]">
+          <h1 className="mt-2 text-2xl font-extrabold leading-[1.6] text-white sm:mt-3 sm:text-[42px] lg:text-[52px]">
             {current.title}
           </h1>
-          <p className="mt-4 text-sm font-normal leading-[1.7] text-[#a0a4bd] sm:text-lg lg:text-[22px]">
+          <p className="mx-auto mt-2 max-w-2xl text-sm font-normal leading-7 text-[#a0a4bd] sm:mt-4 sm:text-lg lg:text-[22px]">
             {current.description}
           </p>
         </div>

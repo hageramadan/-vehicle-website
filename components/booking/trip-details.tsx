@@ -28,7 +28,7 @@ export function TripDetails({
   ...additionalDetails
 }: TripDetailsProps) {
   return (
-    <div className="grid items-start gap-5 md:grid-cols-[1fr_1.14fr]">
+    <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.14fr)]">
       <div className="space-y-5">
         <LocationField
           number={1}

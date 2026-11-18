@@ -105,9 +105,9 @@ export function SignupForm({
       <form
         noValidate
         onSubmit={submit}
-        className="mt-12 rounded-[22px] border border-white/10 bg-white/5 p-6 sm:p-10"
+        className="mt-7 rounded-[22px] border border-white/10 bg-white/5 p-4 sm:mt-12 sm:p-10"
       >
-        <div className="grid items-start gap-x-6 gap-y-7 md:grid-cols-2">
+        <div className="grid grid-cols-1 items-start gap-x-6 gap-y-7 md:grid-cols-2">
           {company ? (
             <>
               <AuthTextField

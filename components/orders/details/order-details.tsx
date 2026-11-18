@@ -31,7 +31,7 @@ export function OrderDetails({ id }: { id: string }) {
     }
   }
   return (
-    <main className="container mx-auto min-h-[70vh] px-4 py-10 md:px-0">
+    <main className="container mx-auto min-h-[calc(100svh-var(--site-header-height))] py-7 sm:py-10">
       <Link
         href="/orders"
         className="mb-8 flex items-center gap-2 text-sm text-[#969bb9]"
@@ -88,7 +88,7 @@ export function OrderDetails({ id }: { id: string }) {
             </div>
             <OrderStatusBadge status={order.status} />
           </header>
-          <div className="grid items-start gap-6 lg:grid-cols-[1.37fr_1fr]">
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.37fr)_minmax(0,1fr)]">
             <div className="space-y-5">
               <OrderProgress order={order} />
               <ReviewTrip
@@ -106,7 +106,7 @@ export function OrderDetails({ id }: { id: string }) {
               )}
               <OrderSummary order={order} />
               {["pending", "active"].includes(order.status) && (
-                <section className="rounded-2xl border border-white/10 bg-white/5 p-6 lg:p-8">
+                <section className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-6 lg:p-8">
                   <h2 className="text-lg font-semibold">إدارة الطلب</h2>
                   <p className="mt-2 text-xs leading-6 text-[#969bb9]">
                     سيتم تحديث حالة الطلب بعد تأكيد الإلغاء.

@@ -17,7 +17,9 @@ export function AuthIntroduction() {
         <div className="absolute inset-[9%] rounded-full bg-white/2.5" />
         <div className="absolute inset-[18%] rounded-full border border-white/5 bg-primary/20" />
       </div>
-      <p className="text-base lg:text-xl font-bold text-[#A7EFD0]">العربة المتنقله</p>
+      <p className="text-base lg:text-xl font-bold text-[#A7EFD0]">
+        العربة المتنقله
+      </p>
       <h2 className="mt-5 text-[38px] font-extrabold leading-[1.6] text-white lg:text-[56px]">
         كل رحلة تبدأ
         <br />
@@ -41,4 +43,3 @@ export function AuthIntroduction() {
     </aside>
   );
 }
-

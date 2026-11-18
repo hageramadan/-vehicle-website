@@ -32,7 +32,7 @@ export function AdditionalDetails({
     accountPhone && phone === accountPhone ? "account" : "other",
   );
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/5 p-6 lg:p-[30px]">
+    <section className="rounded-2xl border border-white/10 min-w-0 bg-white/5 p-4 sm:p-6 lg:p-[30px]">
       <div className="mb-7 flex items-center gap-4">
         <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#74172e] text-sm">
           3
@@ -44,13 +44,13 @@ export function AdditionalDetails({
           <p className="mt-1 text-xs text-[#969bb9]">تفاصيل تساعدنا في خدمتك</p>
         </div>
       </div>
-      <div className="mb-5 flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-3">
+      <div className="mb-5 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3">
         <img
           src={vehicle.image}
           alt={vehicle.name}
-          className="h-[74px] w-[98px] rounded-xl object-cover"
+          className="h-16 w-20 shrink-0 sm:h-[74px] sm:w-[98px] rounded-xl object-cover"
         />
-        <div className="flex-1">
+        <div className="min-w-0 flex-1">
           <p className="text-[11px] text-[#969bb9]">نوع السطحة</p>
           <b className="mt-1 block text-sm">{vehicle.name}</b>
         </div>
@@ -66,7 +66,7 @@ export function AdditionalDetails({
         <legend className="mb-2 text-sm font-bold text-[#b8bdd2]">
           رقم التواصل
         </legend>
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid gap-2 min-[400px]:grid-cols-2">
           {(
             [
               ["account", "رقم الهاتف المسجل"],
@@ -78,7 +78,7 @@ export function AdditionalDetails({
               className={`flex min-h-[58px] cursor-pointer items-center gap-2 rounded-xl border px-3 text-xs ${contact === value ? "border-[#a72a43] bg-white/5" : "border-white/10 bg-white/5"}`}
             >
               <FiPhone className="shrink-0" size={18} />
-              <span className="flex-1">
+              <span className="min-w-0 flex-1">
                 {label}
                 {value === "account" && accountPhone && (
                   <span

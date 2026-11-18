@@ -7,7 +7,7 @@ import { useOrders } from "./orders/use-orders";
 export function Orders() {
   const { filter, setFilter, ready, error, visibleOrders } = useOrders();
   return (
-    <main className="container mx-auto min-h-[65vh] px-4 py-12 md:px-0 sm:py-16">
+    <main className="container mx-auto min-h-[calc(100svh-var(--site-header-height))] py-8 sm:py-16">
       <OrdersHeader />
       <OrdersFilters value={filter} onChange={setFilter} />
       {error && (

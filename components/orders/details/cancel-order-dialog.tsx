@@ -28,13 +28,13 @@ export function CancelOrderDialog({
       onClick={(event) => {
         if (event.target === event.currentTarget) onKeep();
       }}
-      className="fixed inset-0 m-auto w-[calc(100%-32px)] max-w-[720px] rounded-[26px] border border-white/10 bg-linear-to-br from-[#1c2553] to-[#111633] p-0 text-white shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+      className="fixed inset-0 m-auto max-h-[calc(100dvh-32px)] w-[calc(100%_-_32px)] overflow-y-auto max-w-[720px] rounded-[26px] border border-white/10 bg-linear-to-br from-[#1c2553] to-[#111633] p-0 text-white shadow-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm"
     >
       <section
         onClick={(event) => event.stopPropagation()}
-        className="px-6 py-10 text-center sm:px-12"
+        className="px-4 py-6 text-center sm:px-12 sm:py-10"
       >
-        <span className="mx-auto flex size-24 items-center justify-center rounded-full bg-[#8b2538]/20 text-[#ee8495]">
+        <span className="mx-auto flex size-16 sm:size-24 items-center justify-center rounded-full bg-[#8b2538]/20 text-[#ee8495]">
           <FiClock size={36} />
         </span>
         <h2

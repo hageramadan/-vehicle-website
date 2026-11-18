@@ -11,7 +11,7 @@ export function OrderProgress({ order }: { order: Order }) {
   const completed =
     order.status === "completed" ? 5 : order.status === "active" ? 4 : 1;
   return (
-    <section className="rounded-2xl border border-white/10 bg-white/5 p-6 lg:p-8">
+    <section className="min-w-0 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6 lg:p-8">
       <h2 className="mb-7 text-lg font-semibold">حالة الطلب</h2>
       {order.status === "cancelled" ? (
         <div className="rounded-xl border border-[#8b2538]/20 bg-[#8b2538]/15 p-6">
@@ -24,7 +24,10 @@ export function OrderProgress({ order }: { order: Order }) {
           </p>
         </div>
       ) : (
-        <ol aria-label="مراحل الطلب" className="flex">
+        <ol
+          aria-label="مراحل الطلب"
+          className="flex flex-col gap-6 sm:flex-row sm:gap-0"
+        >
           {labels.map((label, index) => {
             const done = index < completed;
             const time =
@@ -33,12 +36,12 @@ export function OrderProgress({ order }: { order: Order }) {
             return (
               <li
                 key={label}
-                className="relative flex min-w-0 flex-1 flex-col items-center text-center"
+                className="relative grid min-w-0 grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-x-3 sm:flex sm:flex-1 sm:flex-col sm:text-center"
               >
                 {index < 4 && (
                   <span
                     aria-hidden="true"
-                    className={`absolute right-1/2 top-4 h-0.5 w-full ${index < completed - 1 ? "bg-[#25bf89]" : "bg-white/10"}`}
+                    className={`absolute right-4 top-8 h-6 w-0.5 sm:right-1/2 sm:top-4 sm:h-0.5 sm:w-full ${index < completed - 1 ? "bg-[#25bf89]" : "bg-white/10"}`}
                   />
                 )}
                 <span
@@ -46,10 +49,10 @@ export function OrderProgress({ order }: { order: Order }) {
                 >
                   {done ? <FiCheck size={18} /> : index + 1}
                 </span>
-                <span className="mt-3 text-[10px] leading-5 text-[#a0a5bd] sm:text-xs">
+                <span className="text-xs leading-6 text-[#a0a5bd] sm:mt-3">
                   {label}
                 </span>
-                <span className="mt-1 text-[10px] text-[#969bb9]">
+                <span className="text-[10px] text-[#969bb9] sm:mt-1">
                   {time
                     ? new Date(time).toLocaleTimeString("ar-EG", {
                         hour: "2-digit",

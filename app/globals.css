@@ -6,6 +6,30 @@
   --color-accent: #9f2342;
   --font-sans: "Cairo", sans-serif;
 }
+:root {
+  --site-header-height: 147px;
+}
+html {
+  scroll-padding-top: 112px;
+}
+.container {
+  padding-inline: 16px;
+}
+main,
+fieldset {
+  min-width: 0;
+}
+@media (min-width: 1024px) {
+  .container {
+    padding-inline: 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    padding-inline: 0;
+  }
+}
+
 body {
   background: linear-gradient(180deg, #111633 0%, #1c2553 100%);
   color: #f7f8fc;
@@ -185,5 +209,31 @@ dialog[open]::backdrop {
   .btn:not(:disabled):active,
   .primary-button:not(:disabled):active {
     transform: none;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --site-header-height: 108px;
+  }
+  html {
+    scroll-padding-top: 88px;
+  }
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  .btn,
+  .primary-button {
+    min-height: 52px;
+    padding: 12px 20px;
+    font-size: 15px;
+    gap: 8px;
+  }
+  .primary-button--small {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 14px;
   }
 }

@@ -190,7 +190,7 @@ export function LocationPicker({
           جارٍ البحث...
         </p>
       )}
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-2 sm:p-4">
         <div className="relative isolate overflow-hidden rounded-xl">
           <MapCanvas
             point={point}
@@ -219,7 +219,7 @@ export function LocationPicker({
               }
             />
             {destination ? "الوجهة" : "الاستلام"}:{" "}
-            <span className="max-w-md truncate">
+            <span className="min-w-0 max-w-full break-words sm:max-w-md">
               {point?.label || "اضغط على الخريطة لتحديد النقطة"}
             </span>
           </p>
@@ -236,7 +236,7 @@ export function LocationPicker({
           type="button"
           disabled={!point}
           onClick={() => point && onConfirm(point.label, point)}
-          className="btn min-h-14 min-w-[240px]"
+          className="btn min-h-14 w-full sm:w-auto sm:min-w-[240px]"
         >
           تأكيد النقطة <FiChevronLeft size={20} />
         </button>

@@ -8,7 +8,7 @@ export function OrderCard({ order }: { order: Order }) {
       aria-label={`طلب ${order.id}`}
       className="motion-card overflow-hidden rounded-2xl border border-white/10 bg-white/5"
     >
-      <div className="flex min-h-[66px] flex-wrap items-center justify-between gap-3 border-b border-white/10 px-6 py-4">
+      <div className="flex min-h-[66px] flex-wrap items-center justify-between gap-3 border-b border-white/10 px-4 py-4 sm:px-6">
         <div className="flex items-center gap-3">
           <span className="text-xs text-[#969bb9]">رقم الطلب</span>
           <h2 dir="ltr" className="text-sm font-bold text-[#c4a34f]">
@@ -22,7 +22,7 @@ export function OrderCard({ order }: { order: Order }) {
           <OrderStatusBadge status={order.status} />
         </div>
       </div>
-      <div className="grid items-center gap-6 px-6 py-6 text-sm sm:grid-cols-2 lg:grid-cols-[1.1fr_1.1fr_1.1fr_.65fr]">
+      <div className="grid items-center gap-4 px-4 py-5 sm:gap-6 sm:px-6 sm:py-6 text-sm sm:grid-cols-2 lg:grid-cols-[1.1fr_1.1fr_1.1fr_.65fr]">
         <div className="flex min-w-0 items-center gap-3">
           <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[#c4a34f]">
             <FiTruck size={24} aria-hidden="true" />
@@ -57,10 +57,10 @@ export function OrderCard({ order }: { order: Order }) {
           <p className="mt-2 font-extrabold text-white">{order.price} ر.س</p>
         </div>
       </div>
-      <div className="flex justify-end border-t border-white/10 px-6 py-4">
+      <div className="flex justify-end border-t border-white/10 px-4 py-4 sm:px-6">
         <Link
           href={`/orders/${encodeURIComponent(order.id)}`}
-          className="flex items-center gap-2 text-xs font-semibold text-[#c4a34f]"
+          className="flex min-h-11 items-center gap-2 text-sm font-semibold text-[#c4a34f]"
         >
           عرض تفاصيل الطلب <FiChevronLeft size={18} aria-hidden="true" />
         </Link>

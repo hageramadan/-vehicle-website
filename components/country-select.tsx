@@ -56,7 +56,7 @@ export function CountrySelect({ value, onChange }: CountrySelectProps) {
             setOpen(true);
           }
         }}
-        className={`flex items-center gap-2 rounded-lg py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4a34f] ${open ? "text-[#d5b76a]" : "text-[#adb2ca] hover:text-white"}`}
+        className={`flex min-h-11 items-center gap-1.5 rounded-lg py-2 text-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c4a34f] ${open ? "text-[#d5b76a]" : "text-[#adb2ca] hover:text-white"}`}
       >
         <img
           src={`/images/flags/${value.iso}.svg`}
@@ -74,7 +74,7 @@ export function CountrySelect({ value, onChange }: CountrySelectProps) {
       </button>
       {open && (
         <div
-          className="absolute left-0 top-full z-50 mt-3 w-[250px] max-w-[calc(100vw-32px)] overflow-hidden rounded-2xl border border-white/15 bg-[#1d2549] shadow-[0_18px_45px_#06091f80]"
+          className="absolute left-0 top-full z-50 mt-3 w-[220px] max-w-[calc(100vw-64px)] overflow-hidden rounded-2xl border border-white/15 bg-[#1d2549] shadow-[0_18px_45px_#06091f80] sm:w-[250px]"
           dir="rtl"
         >
           <ul
@@ -142,4 +142,3 @@ export function CountrySelect({ value, onChange }: CountrySelectProps) {
     </div>
   );
 }
-

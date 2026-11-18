@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FiCheck } from "react-icons/fi";
 export function PasswordUpdated() {
   return (
-    <section className="flex min-w-0 flex-col items-center justify-center px-6 py-16 text-center sm:px-12 md:py-24 lg:px-16">
+    <section className="flex min-w-0 flex-col items-center justify-center px-4 py-10 text-center sm:px-12 sm:py-16 md:py-24 lg:px-16">
       <div className="mb-8 flex size-24 items-center justify-center rounded-full bg-emerald-400/10 shadow-[0_0_0_12px_#34d39905]">
         <FiCheck size={48} className="text-[#25bf89]" />
       </div>

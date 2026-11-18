@@ -33,7 +33,7 @@ export function BookingReview({
   submitting,
 }: BookingReviewProps) {
   return (
-    <div className="grid items-start gap-6 lg:grid-cols-[1.06fr_1fr] lg:gap-10">
+    <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.06fr)_minmax(0,1fr)] lg:gap-10">
       <div className="space-y-5">
         <ReviewTrip
           pickup={pickup}
@@ -44,12 +44,12 @@ export function BookingReview({
         />
         <section
           aria-label="السطحة المختارة"
-          className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-6"
+          className="flex flex-wrap items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 sm:gap-4 sm:p-6"
         >
           <img
             src={vehicle.image}
             alt={vehicle.name}
-            className="h-[88px] w-[112px] rounded-xl object-cover"
+            className="h-16 w-20 shrink-0 sm:h-[88px] sm:w-[112px] rounded-xl object-cover"
           />
           <div className="min-w-0 flex-1">
             <p className="text-xs text-[#969bb9]">نوع السطحة المختار</p>
@@ -63,7 +63,7 @@ export function BookingReview({
           <button
             type="button"
             onClick={onEditVehicle}
-            className="text-sm font-bold text-[#c4a34f]"
+            className="min-h-11 shrink-0 px-2 text-sm font-bold text-[#c4a34f]"
           >
             تغيير
           </button>
