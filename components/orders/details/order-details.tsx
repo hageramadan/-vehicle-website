@@ -64,11 +64,6 @@ export function OrderDetails({ id }: { id: string }) {
           <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-xs text-[#969bb9]">
-                {order.isDemo && (
-                  <span className="ml-2 rounded-full bg-white/5 px-2 py-1 text-[10px]">
-                    طلب تجريبي
-                  </span>
-                )}
                 طلب رقم{" "}
                 <b dir="ltr" className="text-[#c4a34f]">
                   {order.id}

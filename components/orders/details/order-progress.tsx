@@ -26,7 +26,7 @@ export function OrderProgress({ order }: { order: Order }) {
       ) : (
         <ol
           aria-label="مراحل الطلب"
-          className="flex flex-col gap-6 sm:flex-row sm:gap-0"
+          className="flex"
         >
           {labels.map((label, index) => {
             const done = index < completed;
@@ -36,23 +36,23 @@ export function OrderProgress({ order }: { order: Order }) {
             return (
               <li
                 key={label}
-                className="relative grid min-w-0 grid-cols-[32px_minmax(0,1fr)_auto] items-center gap-x-3 sm:flex sm:flex-1 sm:flex-col sm:text-center"
+                className="relative flex min-w-0 flex-1 flex-col items-center text-center"
               >
                 {index < 4 && (
                   <span
                     aria-hidden="true"
-                    className={`absolute right-4 top-8 h-6 w-0.5 sm:right-1/2 sm:top-4 sm:h-0.5 sm:w-full ${index < completed - 1 ? "bg-[#25bf89]" : "bg-white/10"}`}
+                    className={`absolute right-1/2 top-3.5 h-0.5 w-full sm:top-4 ${index < completed - 1 ? "bg-[#25bf89]" : "bg-white/10"}`}
                   />
                 )}
                 <span
-                  className={`relative flex size-8 items-center justify-center rounded-full text-xs ${done ? "bg-[#25bf89] text-white" : "bg-[#373e61] text-[#969bb9]"}`}
+                  className={`relative flex size-7 shrink-0 items-center justify-center rounded-full text-xs sm:size-8 ${done ? "bg-[#25bf89] text-white" : "bg-[#373e61] text-[#969bb9]"}`}
                 >
-                  {done ? <FiCheck size={18} /> : index + 1}
+                  {done ? <FiCheck className="size-4 sm:size-[18px]" /> : index + 1}
                 </span>
-                <span className="text-xs leading-6 text-[#a0a5bd] sm:mt-3">
+                <span className="mt-3 min-h-12 px-0.5 text-[9px] leading-4 text-[#a0a5bd] min-[375px]:text-[10px] sm:min-h-0 sm:text-xs sm:leading-6">
                   {label}
                 </span>
-                <span className="text-[10px] text-[#969bb9] sm:mt-1">
+                <span className="mt-1 whitespace-nowrap text-[9px] text-[#969bb9] sm:text-[10px]">
                   {time
                     ? new Date(time).toLocaleTimeString("ar-EG", {
                         hour: "2-digit",
